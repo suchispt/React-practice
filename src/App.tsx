@@ -9,8 +9,10 @@ import LayoutComp from "./Home/Layout";
 import Counter from "./Home/Counter";
 import ProfileCard from "./Home/ProfileCard";
 import Timer from "./Home/Timer";
+import MovingCar from "./Home/Car";
 
 function App() {
+  const [background, setBackground] = useState("rgb(255, 239, 186)");
   return (
     <>
       {/* <LayoutComp>
@@ -25,8 +27,12 @@ function App() {
         <ProfileCard></ProfileCard>
       </CardComponent> */}
 
-      <CardComponent>
+      {/* <CardComponent>
         <Timer></Timer>
+      </CardComponent> */}
+
+      <CardComponent backdrop={background}>
+        <MovingCar></MovingCar>
       </CardComponent>
     </>
   );

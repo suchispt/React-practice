@@ -2,15 +2,16 @@ import { Children } from "react";
 
 type CardComp = {
   children: React.ReactNode;
+  backdrop: string;
 };
 
-const CardComponent = ({ children }: CardComp) => {
+const CardComponent = ({ children, backdrop }: CardComp) => {
   return (
     <div
       style={{
         width: "63rem",
         borderRadius: "10px",
-        backgroundColor: "aquamarine",
+        background: `${backdrop}`,
         color: "black",
       }}
     >
