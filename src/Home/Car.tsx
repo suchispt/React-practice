@@ -1,28 +1,50 @@
 import { useEffect, useState } from "react";
 import car from "../assets/car.svg";
 
-const MovingCar = () => {
-  var [carPosition, setCarPosition] = useState(0);
-
+type passPosition = {
+  currentPosition: (key: number) => void
+}
+const MovingCar = ({currentPosition}: passPosition) => {
+  const [carPosition, setCarPosition] = useState(0);
   useEffect(() => {
-    var position = (val: KeyboardEvent) => {
+    const position = (val: KeyboardEvent) => {
       if (val.key == "ArrowLeft") {
         setCarPosition((prev) => {
-          if (prev == 47) return -51;
-          else return prev + 1;
+          if (prev == 47) {
+            currentPosition(-51)
+            return -51;
+          }
+          else {
+            currentPosition(prev)
+            const val = prev + 1
+            return val;
+          }
         });
       }
 
       if (val.key == "ArrowRight") {
         setCarPosition((prev) => {
-          if (prev == -51) return 47;
-          else return prev - 1;
+          if (prev == -51) {
+            currentPosition(47)
+            return 47;
+          }
+          else {
+            currentPosition(prev)
+            const val = prev - 1
+            return val;
+          }
         });
       }
     };
 
+    const name = "suchitra";
+
+    if(!name){
+      console.log("name -->", name);      
+    }
+
     if (carPosition == 47) {
-      carPosition = -5;
+      setCarPosition(-5);
     }
 
     window.addEventListener("keydown", position);

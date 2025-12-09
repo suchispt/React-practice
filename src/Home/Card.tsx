@@ -1,8 +1,7 @@
-import { Children } from "react";
 
 type CardComp = {
-  children: React.ReactNode;
-  backdrop: string;
+  children?: React.ReactNode;
+  backdrop?: string;
 };
 
 const CardComponent = ({ children, backdrop }: CardComp) => {
