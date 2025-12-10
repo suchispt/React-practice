@@ -10,11 +10,11 @@
 // import TodayMessage from "./Home/TodayMessage";
 import "./App.css";
 // import CardComponent from "./Home/Card";
-// import { Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 // import User from "./Home/User";
-// import UserApi from "./Home/UserApi";
-import Avatar from "./Home/Avatar";
-import AvatarImg from "./assets/avatar.svg";
+import UserApi from "./Home/UserApi";
+// import Avatar from "./Home/Avatar";
+// import AvatarImg from "./assets/avatar.svg";
 
 
 function App() {
@@ -56,16 +56,16 @@ function App() {
 
 
   return (
-    // <Routes>
-    //   <Route path="/" element={<Avatar />}/>
-    //   <Route path="/counter" element={<Counter />}/>
-    // </Routes>
+    <Routes>
+      <Route path="/" element={<UserApi />}/>
+      {/* <Route path="/counter" element={<Counter />}/> */}
+    </Routes>
 
-    <>
-      <Avatar src={AvatarImg} alt="image"/>
-      <Avatar>S</Avatar>
-      <Avatar/>
-    </>
+    // <>
+    //   <Avatar src={AvatarImg} alt="image"/>
+    //   <Avatar>S</Avatar>
+    //   <Avatar/>
+    // </>
   )
 }
 

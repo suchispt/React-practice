@@ -8,10 +8,10 @@ type avatarType = {
     children?: string;
 }
 
-const AvatarImg = ({src, alt}: avatarType) => {
+const AvatarImg = ({ src, alt }: avatarType) => {
     return <div className="avatar">
-            <img src={src} alt={alt} />
-        </div>
+        <img src={src} alt={alt} />
+    </div>
 }
 
 
