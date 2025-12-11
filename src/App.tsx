@@ -12,7 +12,8 @@ import "./App.css";
 // import CardComponent from "./Home/Card";
 import { Routes, Route } from "react-router-dom";
 // import User from "./Home/User";
-import UserApi from "./Home/UserApi";
+// import UserApi from "./Home/UserApi";
+import Login from "./Home/Login";
 // import Avatar from "./Home/Avatar";
 // import AvatarImg from "./assets/avatar.svg";
 
@@ -57,7 +58,7 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<UserApi />}/>
+      <Route path="/" element={<Login />}/>
       {/* <Route path="/counter" element={<Counter />}/> */}
     </Routes>
 

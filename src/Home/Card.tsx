@@ -12,10 +12,15 @@ const CardComponent = ({ children, backdrop }: CardComp) => {
         borderRadius: "10px",
         background: `${backdrop}`,
         color: "black",
+        border: "1px solid black",
+        height: "15rem",
+        display: "grid",
+        justifyContent: "center",
+        padding: "38px"
       }}
     >
       {children}
-    </div>
+    </div >
   );
 };
 

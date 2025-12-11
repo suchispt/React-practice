@@ -1,6 +1,7 @@
 import axios from "axios";
 import TextField from '@mui/material/TextField';
 import { useEffect, useState } from "react";
+import api from "../api/axiosInstance";
 
 const UserApi = () => {
 
@@ -105,7 +106,7 @@ const UserApi = () => {
 
         const submitUser = async () => {
             try {
-                const res = await axios.post("https://jsonplaceholder.typicode.com/users", formData)
+                const res = await api.post("https://jsonplaceholder.typicode.com/users", formData)
                 // const res = await axios.delete("https://jsonplaceholder.typicode.com/users/73",)
                 setData((prev) => [...prev, res.data]);
 
@@ -120,7 +121,7 @@ const UserApi = () => {
             catch (err) {
                 console.error("API Error:", err);
                 setError("Failed to fetch data");
-                const fresh = await axios.get(
+                const fresh = await api.get(
                     "https://jsonplaceholder.typicode.com/users"
                 );
 
@@ -167,7 +168,7 @@ const UserApi = () => {
         try {
             setLoading(true);
 
-            await axios.delete(
+            await api.delete(
                 `https://jsonplaceholder.typicode.com/users/${id}`
             );
 
