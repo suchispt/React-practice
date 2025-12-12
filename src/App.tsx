@@ -14,6 +14,8 @@ import { Routes, Route } from "react-router-dom";
 // import User from "./Home/User";
 // import UserApi from "./Home/UserApi";
 import Login from "./Home/Login";
+import UserApi from "./Home/UserApi";
+import TableComponent from "./Loans/Components/Table";
 // import Avatar from "./Home/Avatar";
 // import AvatarImg from "./assets/avatar.svg";
 
@@ -58,8 +60,9 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<Login />}/>
-      {/* <Route path="/counter" element={<Counter />}/> */}
+      <Route path="/" element={<TableComponent />}/>
+      <Route path="/userApi" element={<UserApi />}
+      />
     </Routes>
 
     // <>

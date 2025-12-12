@@ -2,6 +2,8 @@ import axios from "axios";
 import TextField from '@mui/material/TextField';
 import { useEffect, useState } from "react";
 import api from "../api/axiosInstance";
+import "./UserApi.css"; 
+import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
 
 const UserApi = () => {
 
@@ -100,7 +102,7 @@ const UserApi = () => {
         setLoading(true);
         setError("");
         setData([]);
-        
+
         if (!submitData) return
         setSubmitData(false)
 
@@ -217,6 +219,35 @@ const UserApi = () => {
                 {data.map(data => (
                     <p key={data.id}>{data.name}</p>
                 ))}
+
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                        <TableHead>
+                            <TableRow>
+                                {data.length > 0 &&
+                                    Object.keys(data[0]).map((key) => (
+                                        <TableCell align="right" key={key}>
+                                            {key}
+                                        </TableCell>
+                                    ))
+                                }
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {data.map((row, rowIndex) => (
+                                <TableRow key={rowIndex}>
+                                    {Object.values(row).map((value, colIndex) => (
+                                        <TableCell key={colIndex}>
+                                            {typeof value === "object"
+                                                ? JSON.stringify(value)
+                                                : value}
+                                        </TableCell>
+                                    ))}
+                                </TableRow>
+                            ))}
+                        </TableBody>
+                    </Table>
+                </TableContainer>
 
                 {data.map((user) => (
                     <div key={user.id} style={{ display: "flex", gap: "10px" }}>

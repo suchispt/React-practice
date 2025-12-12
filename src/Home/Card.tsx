@@ -13,7 +13,6 @@ const CardComponent = ({ children, backdrop }: CardComp) => {
         background: `${backdrop}`,
         color: "black",
         border: "1px solid black",
-        height: "15rem",
         display: "grid",
         justifyContent: "center",
         padding: "38px"
